@@ -11,7 +11,7 @@ from random import randint
 d = feedparser.parse("https://en.wikipedia.org/w/api.php?action=featuredfeed&feed=featured&feedformat=atom")
 
 # Get random featured article
-html = d['entries'][randint(0,9)]['summary_detail']['value']
+html = d['entries'][randint(0,randint(0,len(d['entries'])-1))]['summary_detail']['value']
 
 # Remove the header image and caption
 htmlStart = html.find("<p>")
